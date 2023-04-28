@@ -21,7 +21,7 @@ def on_message_from_temp(client, userdata, message):
 
 #Date message callback for humid
 def on_message_from_humid(client, userdata, message):
-   print("VHE 205 Humidity: " + message.payload.decode() + "%")
+   print("VHE 205 Humidity: " + message.payload.decode() + "%\n")
 
 
 if __name__ == '__main__':
@@ -33,5 +33,5 @@ if __name__ == '__main__':
     client.on_connect = on_connect
 
     #USC Server: "eclipse.usc.edu" OR "68.181.32.115"
-    client.connect(host="68.181.32.115", port=11000, keepalive=60) 
+    client.connect(host="192.168.2.31", port=1883, keepalive=60) 
     client.loop_forever()
