@@ -18,4 +18,5 @@ Instructions on how to compile/execute our code (given that the circuitry and ha
 9) Watch our project work!
 
 External Libraries used in our code:
-1)
+1) import paho.mqtt.client as mqtt
+2) 
