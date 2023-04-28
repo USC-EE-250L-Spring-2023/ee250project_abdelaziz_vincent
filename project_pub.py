@@ -24,8 +24,7 @@ setRGB(0,0,255) #BLUE LCD starting color
 pinMode(led,"OUTPUT")
 
 if __name__ == '__main__':
-    #ip_address = "192.168.64.1" #Computer Terminal
-    ip_address = "192.168.2.31" #BROKER RPI
+    #ip_address = "192.168.2.31" #BROKER RPI
 
     #create a client object
     client = mqtt.Client()
@@ -56,7 +55,7 @@ if __name__ == '__main__':
             # range sensor
             distance = ultrasonicRead(ultrasonic_ranger)
             print(distance,'cm')
-            threshold = 69 #CHANGE THIS LATER
+            threshold = 70 
 
             # temp&humd sensor
             [ temp,hum ] = dht(dht_sensor_port,dht_sensor_type)
