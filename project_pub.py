@@ -19,20 +19,20 @@ dht_sensor_type = 0     # use 0 for the blue-colored sensor and 1 for the white-
 def on_connect(client, userdata, flags, rc):
     print("Connected to server (i.e., broker) with result code "+str(rc))
 
-
+#Boot system
 setRGB(0,0,255) #BLUE LCD starting color
 pinMode(led,"OUTPUT")
 
 if __name__ == '__main__':
     #ip_address = "192.168.64.1" #Computer Terminal
-    ip_address = "192.168.1.26" #RPI
+    ip_address = "192.168.2.31" #BROKER RPI
 
     #create a client object
     client = mqtt.Client()
     #attach the on_connect() callback function defined above to the mqtt client
     client.on_connect = on_connect
 
-    client.connect(host="eclipse.usc.edu", port=11000, keepalive=60)
+    client.connect(host="192.168.2.31", port=1883, keepalive=60) #1883
 
     client.loop_start()
     time.sleep(1)
@@ -51,7 +51,8 @@ if __name__ == '__main__':
 
         
         # 10 seconds for the main program to run
-        for i in range (0,100):
+        #for i in range (0,100):
+        while True:
             # range sensor
             distance = ultrasonicRead(ultrasonic_ranger)
             print(distance,'cm')
