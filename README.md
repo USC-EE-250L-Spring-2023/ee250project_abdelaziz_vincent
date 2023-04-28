@@ -19,4 +19,14 @@ Instructions on how to compile/execute our code (given that the circuitry and ha
 
 External Libraries used in our code:
 1) import paho.mqtt.client as mqtt
-2) 
+2) import time
+3) import grovepi
+4) import math
+5) from datetime import datetime
+6) import socket
+
+Used the following link to help us figure out the rest of the needed libraries:
+#https://github.com/DexterInd/GrovePi/blob/master/Projects/Home_Weather_Display/Home_Weather_Display.py
+
+7) from grovepi import *
+8) from grove_rgb_lcd import *
